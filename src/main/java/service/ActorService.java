@@ -13,4 +13,9 @@ public class ActorService {
 		return DBUtils.executeQuery(query, new ActorMapper());
 	}
 
+	public static Actor getAnActor(String actorId){
+		String query = "SELECT * FROM actor WHERE actor_id = " + actorId;
+		return DBUtils.executeQuery(query,new ActorMapper()).get(0);
+	}
+
 }
